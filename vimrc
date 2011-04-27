@@ -58,6 +58,7 @@ set noerrorbells         " don't beep
 
 set nobackup
 set noswapfile
+set hidden
 
 
 " filetype specific config

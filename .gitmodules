@@ -1,0 +1,9 @@
+[submodule "bundle/snipMate"]
+	path = bundle/snipMate
+	url = https://github.com/msanders/snipmate.vim.git
+[submodule "bundle/lusty-juggler"]
+	path = bundle/lusty-juggler
+	url = git://github.com/sjbach/lusty.git
+[submodule "bundle/command-t"]
+	path = bundle/command-t
+	url = git://git.wincent.com/command-t.git
