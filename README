@@ -12,3 +12,8 @@ Switch to the `~/.vim` directory, and fetch submodules:
     cd ~/.vim
     git submodule init
     git submodule update
+
+Build the command-t plugin:
+
+    cd ~/.vim/bundle/command-t
+    rake make
