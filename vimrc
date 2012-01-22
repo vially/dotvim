@@ -14,7 +14,13 @@ nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " autocmd VimEnter * set vb t_vb=
+
+" Solarized settings
 syntax enable
+set background=dark
+colorscheme solarized
+" Toggle solarized background
+call togglebg#map("<F5>")
 
 " Editing behaviour {{{
 set showmode                    " always show what mode we're currently editing in
@@ -55,6 +61,7 @@ set wildignore=*.swp,*.bak,*.pyc,*.class
 set title                " change the terminal's title
 " set visualbell           " don't beep
 set noerrorbells         " don't beep
+set laststatus=2
 
 set nobackup
 set noswapfile
@@ -62,27 +69,13 @@ set hidden
 
 
 " filetype specific config
+autocmd FileType php setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType twig setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
-if &t_Co >= 256 || has("gui_running")
-    " colorscheme mustang
-   colorscheme molokai
-endif
-
-if &t_Co > 2 || has("gui_running")
-   " switch syntax highlighting on, when the terminal has colors
-   syntax on
-endif
-
-if has("gui_running")
-    set guifont=Inconsolata:h14
-    " Remove toolbar, left scrollbar and right scrollbar
-    set guioptions-=T
-    set guioptions-=l
-    set guioptions-=L
-    set guioptions-=r
-    set guioptions-=R
+if &t_Co >= 256
+    "let g:solarized_termcolors=256
 endif
 
 " set ofu=syntaxcomplete
