@@ -20,7 +20,7 @@ syntax enable
 set background=dark
 colorscheme solarized
 " Toggle solarized background
-call togglebg#map("<F5>")
+call togglebg#map("<F6>")
 
 " Editing behaviour {{{
 set showmode                    " always show what mode we're currently editing in
@@ -74,8 +74,9 @@ autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType twig setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
-if &t_Co >= 256
-    "let g:solarized_termcolors=256
+if has('gui_running')
+    " fancy Powerline symbols
+    let g:Powerline_symbols = 'fancy'
 endif
 
 " set ofu=syntaxcomplete
