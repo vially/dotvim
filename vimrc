@@ -97,6 +97,9 @@ let php_sql_query = 1
 let php_htmlInStrings = 1
 let php_noShortTags = 1
 
+" ctrlp settings
+let g:ctrlp_dotfiles = 0
+
 nmap <silent> ,/ :nohlsearch<CR>
 nnoremap <leader>w <C-w>v<C-w>l
 
