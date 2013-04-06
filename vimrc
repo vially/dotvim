@@ -2,8 +2,35 @@
 set nocompatible
 
 filetype off                    " force reloading *after* pathogen loaded
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+"
+" original repos on github
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-markdown'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'mileszs/ack.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'othree/html5.vim'
+Bundle 'Glench/Vim-Jinja2-Syntax'
+Bundle 'scrooloose/nerdtree'
+Bundle 'mattn/zencoding-vim'
+" vim-scripts repos
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+Bundle 'LustyJuggler'
+"Bundle 'Jinja'
+" non github repos
+"Bundle 'git://git.wincent.com/command-t.git'
+
 filetype plugin indent on       " enable detection, plugins and indenting in one step
 
 " Change the mapleader from \ to ,
@@ -21,6 +48,10 @@ set background=dark
 colorscheme solarized
 " Toggle solarized background
 call togglebg#map("<F6>")
+
+" Powerline
+set rtp+=/usr/lib/python2.7/site-packages/powerline/bindings/vim
+"python from powerline.bindings.vim import source_plugin; source_plugin()
 
 " Editing behaviour {{{
 set showmode                    " always show what mode we're currently editing in
@@ -99,6 +130,9 @@ let php_noShortTags = 1
 
 " ctrlp settings
 let g:ctrlp_dotfiles = 0
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]deploy$',
+  \ }
 
 nmap <silent> ,/ :nohlsearch<CR>
 nnoremap <leader>w <C-w>v<C-w>l
@@ -106,3 +140,6 @@ nnoremap <leader>w <C-w>v<C-w>l
 " Managing buffers with LustyJuggler {{{
 map <leader>b :LustyJuggler<CR>
 " }}}
+
+" NERDTree shortcut
+map <F10> :NERDTree<CR>
